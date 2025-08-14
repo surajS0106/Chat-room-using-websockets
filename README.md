@@ -1,7 +1,3 @@
-Got it! Here’s a clean, professional **README** for your GitHub repo describing your scalable WebSocket chat backend with Redis. You can copy it as `README.md` in your project root:
-
----
-
 ````markdown
 # Scalable WebSocket Chat Rooms
 
