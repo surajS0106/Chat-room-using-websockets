@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WebSocket Chat Test</title>
+</head>
+<body>
+  <input id="room" placeholder="Room ID" />
+  <input id="msg" placeholder="Message" />
+  <button onclick="joinRoom()">Join Room</button>
+  <button onclick="sendMsg()">Send</button>
+  <ul id="messages"></ul>
+
+  <script>
+    const ws = new WebSocket("ws://localhost:8080");
+
+    ws.onopen = () => console.log("Connected to WS server");
+
+    ws.onmessage = (event) => {
+      const li = document.createElement("li");
+      li.textContent = event.data;
+      document.getElementById("messages").appendChild(li);
+    };
+
+    function joinRoom() {
+      const room = document.getElementById("room").value;
+      ws.send(JSON.stringify({ type: "join", room }));
+    }
+
+    function sendMsg() {
+      const text = document.getElementById("msg").value;
+      ws.send(JSON.stringify({ type: "chat", text }));
+      document.getElementById("msg").value = "";
+    }
+  </script>
+</body>
+</html>

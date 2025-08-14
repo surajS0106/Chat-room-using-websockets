@@ -1,0 +1,23 @@
+{
+  "name": "chat-room-using-websockets",
+  "version": "1.0.0",
+  "description": "Chat-room-using-websockets",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsc -b && node dist/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ioredis": "^5.7.0",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.2.1",
+    "@types/ws": "^8.18.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
